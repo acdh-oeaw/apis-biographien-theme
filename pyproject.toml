@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "apis-biographien-theme"
+version = "0.0.1"
+description = "Apis biographien"
+authors = ["Matthias Schlögl <m.schloegl@gmail.com>"]
+license = "MIT"
+packages = [{include = "theme"}]
+exclude = ["README.md"]
+
+
+[tool.poetry.dependencies]
+django-haystack = "^3.2.1"
+pysolr = "*"
