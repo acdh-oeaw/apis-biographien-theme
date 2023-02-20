@@ -27,12 +27,10 @@ def place_count():
 def formated_daterange(startdate, enddate):
     rangestring = ''
     if (startdate and startdate is not None) or (enddate and enddate is not None):
-        rangestring += '('
         if (startdate and startdate is not None):
             rangestring += startdate
         if (enddate and enddate is not None):
             rangestring += '-' + enddate
-        rangestring += ')'
     return rangestring
 
 
@@ -74,3 +72,7 @@ def check_facet_selection(key,val,selectedfacets):
 @register.simple_tag
 def filter_params(request,param):
     return request.GET.getlist(param)
+
+@register.simple_tag
+def filter_attr(entity,attrname):
+    return getattr(entity, attrname)

@@ -4,7 +4,12 @@ version = "0.0.1"
 description = "Apis biographien"
 authors = ["Matthias Schlögl <m.schloegl@gmail.com>"]
 license = "MIT"
+packages = [{include = "theme"}]
 
 
 [tool.poetry.dependencies]
-django-haystack = "^3.2.1"
+python = ">=3.11.2, <3.12"
+django-haystack = "~3.2"
+libsass = "^0.22.0"
+django-compressor = "^4.3.1"
+django-sass-processor = "^1.2.2"

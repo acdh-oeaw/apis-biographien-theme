@@ -1,0 +1,197 @@
+.footer-separator {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  svg {
+    margin-right: 0.3rem;
+  }
+}
+
+#wrapper-footer-full a.helpdesk-button {
+  display: block;
+  background-color: $white;
+  border: 1px solid $acdh_blue;
+  border-radius: 20px;
+  padding: 0.25rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $acdh_blue;
+  max-width: 16rem;
+  transition: background-color ease .2s, color ease .2s;
+
+  &:hover, &:focus {
+    background-color: $acdh_blue;
+    color: $white;
+    text-decoration: none;
+  }
+
+}
+
+.footer-widget {
+  margin-top: 1rem;
+}
+
+// Docs template
+.docs-side-nav-title {
+  padding-top: 1rem;
+}
+
+.seperation::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  border-top: 2px solid $acdh_blue;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a.anchorjs-link {
+  border-bottom: 0 !important;
+  padding-left: 0.5rem !important;
+
+  &::after {
+    color: $acdh_blue;
+  }
+
+  &:hover {
+    filter: brightness(90%) !important;
+  }
+
+}
+
+.docs-demo-wrapper {
+  padding: 1.5rem;
+  background: rgba(136, 220, 223, 0.14);
+
+  a {
+    border-bottom: 0 !important;
+  }
+
+}
+
+.wp-geshi-highlight {
+  padding: 10px 10px 10px 15px !important;
+  background-color: rgba(136, 220, 223, 0.14) !important;
+}
+
+body .wp-geshi-highlight pre, body .wp-geshi-highlight span {
+  font-size: 14px !important;
+  line-height: 22px !important;
+}
+
+.avatar-icon {
+  border: 1px solid #333;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+
+  svg {
+    padding-top: 10px;
+    width: 36px;
+    height: 36px;
+    stroke: #cd2324;
+  }
+}
+
+.partnerlogo {
+  height:60px;
+}
+
+.entitypaging {
+  opacity: $entity-paging-link-opacity;
+}
+
+.inline-map {
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+  transform: translateZ(0);
+}
+
+.collapsebtn .chevron-down {
+  transition: 0.3s;
+}
+
+.collapsebtn.collapsed .chevron-down {
+  transform: rotate(90deg);
+}
+
+.noUi-target {
+  font-size: 0.8em;
+}
+
+.noUi-connect {
+  background-color: $oebl-red;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  outline: 0;
+}
+
+.noUi-horizontal .noUi-handle::before,
+.noUi-horizontal .noUi-handle::after {
+  display: none;
+}
+
+
+.facet-group-item:nth-child(n + 6) {
+  display: block;
+}
+
+.show-limited-number .facet-group-item:nth-child(n + 6) {
+  display: none;
+}
+
+.load-more-less {
+  font-size: 0.8em;
+  color: #cd2324;
+}
+
+.table  {
+  line-height:1.2em
+}
+
+.lb-data {
+  .lb-caption {
+    font-size:inherit;
+    font-weight: normal;
+    line-height: inherit;
+  }
+  .lb-close {
+    display:none;
+  }
+}
+
+.lightbox {
+  .lb-image {
+    border-radius: 0;
+  }
+}
+
+.reltable {
+  thead {
+    display:none;
+  }
+  tbody {
+    min-width: 100%;
+  }
+}
+
+.btn-oebl-grey {
+  color: $black;
+  background-color: $oebl_grey;
+}
+
+.btn-oebl-grey:focus, .btn-oebl-grey.focus {
+  box-shadow: none;
+}

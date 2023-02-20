@@ -8,7 +8,7 @@
         <span class="my-auto mr-1">{{table.rows | length}} {% if table.rows|length > 1 %}Ergebnisse{%else%}Ergebnis{%endif%}</span>
         
         <nav aria-label="Table navigation" class="d-inline-block">
-            <ul class="pagination mb-0">
+            <ul class="pagination pagination-sm mb-0">
                 {% if table.page.has_previous %}
                 {% block pagination_top.previous %}
                 <li class="previous page-item">
@@ -52,10 +52,10 @@
     <table {% render_attrs table.attrs class="table" %}>
         {% block table.thead %}
         {% if table.show_header %}
-        <thead {{ table.attrs.thead.as_html }}>
+        <thead {{ table.attrs.thead.as_html }} class="bg-secondary">
             <tr>
                 {% for column in table.columns %}
-                <th class="pl-3 pr-3" {{ column.attrs.th.as_html }}>
+                <th class="pl-3 pr-3 text-nowrap py-1" {{ column.attrs.th.as_html }}>
                     {% if column.orderable %}
                       <a href="{% querystring table.prefixed_order_by_field=column.order_by_alias.next %}">{{ column.header }}
                       {% if request.GET.sort == column.order_by_alias %}
@@ -115,7 +115,7 @@
     <div class="d-flex justify-content-end table_meta p-1 mt-2">
         <span class="my-auto mr-1">{{table.rows | length}} Ergebnisse</span>
         <nav aria-label="Table navigation" class="d-inline-block">
-            <ul class="pagination mb-0">
+            <ul class="pagination pagination-sm mb-0">
                 {% if table.page.has_previous %}
                 {% block pagination.previous %}
                 <li class="previous page-item">

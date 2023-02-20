@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 {% load webpage_extras %}
 {% load browsing_extras %}
 {% load infos_extras %}
@@ -13,10 +13,7 @@
 
     <title>{% block title %} ÖBL {% endblock %}</title>
 
-    <!-- Fundament -->
-    <link href="https://shared.acdh.oeaw.ac.at/fundament/dist/fundament/css/fundament.min.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
+   <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
@@ -24,7 +21,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.css" />
     <!-- Custom styles for this template -->
     <script src="https://unpkg.com/feather-icons@4.28.0/dist/feather.min.js"></script>
-    <link rel="stylesheet" href="{%static 'theme/css/main.css' %}" />
+    <!--<link rel="stylesheet" href="{%static 'theme/css/main.css' %}" />-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.11.0/b-2.0.0/b-html5-2.0.0/cr-1.5.4/r-2.2.9/sp-1.4.0/datatables.min.css" />
+
+    {% load sass_tags %}
+    <link href="{% sass_src 'assets.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'style.scss' %}" rel="stylesheet" type="text/css" />
+
 
     <!--
       this global event bus is used as a simple
@@ -95,7 +99,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <!-- Your menu goes here -->
-              <ul id="main-menu" class="navbar-nav">
+              <ul id="main-menu" class="navbar-nav text-uppercase font-weight-bold">
                 <!--<li class="nav-item dropdown">
                   <a title="Dropdown" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Entities <span class="caret"></span></a>
                   <ul class=" dropdown-menu" role="menu">
@@ -144,8 +148,8 @@
                       Biographisches<br/>
                       Lexikon</small></p>
                     </div>
-                    <div class="col-sm-4 col-md-4 col-lg-4 col-12 footermenu">
-                    <ul class="mb-0 pl-0">
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-12 footermenu text-center text-uppercase">
+                    <ul class="mb-0 pl-0 list-unstyled">
                       <li class="pb-1 pl-0"><a title="Impressum" href="{% url 'theme:imprint' %}" class="nav-link">Impressum</a></li>
                       <li class=" pl-0"><small>&#xa9; Österreichische Akademie der Wissenschaften</small></li>
                     </ul>

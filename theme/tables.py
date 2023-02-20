@@ -27,7 +27,7 @@ class SearchResultTable(tables.Table):
         'theme:person-detail',
         args=[A('pk')],
         verbose_name='Name',
-        attrs={'a': {'class': 'oebl-font-red semi-bold'}}
+        attrs={'a': {'class': 'text-primary semi-bold lh-narrow'}}
     )
 
     profession = tables.Column(

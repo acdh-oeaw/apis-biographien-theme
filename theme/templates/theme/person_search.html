@@ -4,12 +4,12 @@
 {% block header %}
 {% endblock %}
 {% block content %}
-{% load staticfiles %}
+{% load static %}
 {% load render_table from django_tables2 %}
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <div class="card mt-3 border-0 rounded-0 background_none">
+      <div class="card mt-3 border-0 rounded-0 bg-transparent">
         <div class="card-body p-0">
           <form action="" method="get">
             <div class="input-group mb-3">
@@ -18,7 +18,7 @@
                 {% if query %}<input type="hidden" name="sort" value="{{form.cleaned_data.sort}}">{% endif %}
               <div class="input-group-append">
                 <button class="btn btn-primary rounded-0" type="submit">
-                  <i data-feather="search" style="width: 20px; height: 20px;"></i>
+                  <i data-feather="search"></i>
                 </button>
               </div>
             </div>
@@ -36,12 +36,12 @@
                   {%endfor%}
               {%endfor%}
               <div class="card rounded-0">
-                <div class="card-header p-0" id="heading_lebensdaten">
+                <div class="card-header p-0 bg-secondary" id="heading_lebensdaten">
                   <h5 class="mb-0">
-                    <button type="button" class="btn btn-link collapsebtn w-100 text-left" data-toggle="collapse"
+                    <button type="button" class="btn btn-secondary rounded-0 collapsebtn w-100 text-left" data-toggle="collapse"
                       data-target="#lebensdaten" aria-expanded="true" aria-controls="lebensdaten">
                       Lebensdaten
-                      <i class="chevron-down" data-feather="chevron-down"></i>
+                      <i class="chevron-down float-right" data-feather="chevron-down"></i>
                     </button>
                   </h5>
                 </div>
@@ -55,21 +55,21 @@
                 {% filter_facetfields facets.fields field as filtered_vals %}
                   {% if filtered_vals|length > 0 %}
                     <div class="card mt-2 rounded-0">
-                      <div class="card-header p-0" id="heading{{field}}">
+                      <div class="card-header p-0 bg-secondary" id="heading{{field}}">
                         <h5 class="mb-0">
-                          <button type="button" class="btn btn-link collapsebtn w-100 text-left" data-toggle="collapse"
+                          <button type="button" class="btn btn-secondary rounded-0 collapsebtn w-100 text-left" data-toggle="collapse"
                             data-target="#{{field}}" aria-expanded="true" aria-controls="{{field}}">
                             {% normalize_facet field 'simple' %}
-                            <i class="chevron-down" data-feather="chevron-down"></i>
+                            <i class="chevron-down float-right" data-feather="chevron-down"></i>
                           </button>
                         </h5>
                       </div>
                       <div id="{{field}}" class="collapse show" aria-labelledby="heading{{field}}">
                         <div class="card-body p-2 pl-3 pr-3 show-limited-number">
-                          <ul class="pl-0 mb-0">
+                          <ul class="pl-0 mb-0 list-unstyled">
                             {% for fv in filtered_vals %}
                               {% if fv.1 > 0 %}
-                                <li class="facet-group-item mt-2 mb-2 pl-0">
+                                <li class="facet-group-item pl-0 font-weight-light">
                                   {% check_facet_selection field fv.0 form.selected_facets as facet_selected %}
                                   {% if facet_selected %}
                                     <span class="disabled">{{ fv.0 }} ({{ fv.1 }})</span>
