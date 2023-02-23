@@ -1,0 +1,24 @@
+{% load custom_tags %}
+<button class="btn btn-sm border collapsebtn btn-oebl-grey w-100 d-block rounded-0 text-uppercase"
+    data-toggle="collapse" data-target="#collapsePlc" aria-expanded="true" aria-controls="collapsePlc">
+    {{entity | length}} {% if entity|length > 1 %} {{titleplural}} {%else%} {{titlesingular}} {%endif%}
+    <i class="chevron-down float-right" data-feather="chevron-down"></i>
+</button>
+<div id="collapsePlc" class="collapse show">
+    <table class="table table-sm small reltable w-100">
+        <thead>
+            <th></th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for x in entity %}
+            <tr>
+                <td class="p-1">{{x.relation_type}}</td>
+                <td>{% filter_attr x attr %}</td>
+                <td>{% formated_daterange x.start_date_written x.end_date_written %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

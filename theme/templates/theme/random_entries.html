@@ -1,9 +1,8 @@
-{% load staticfiles %}
-
+{% load static %}
 
 {% if featured_pers %}
 <div class="sectionheader">
-    <h5 class="sectiontitle">Featured</h5>
+    <p class="sectiontitle text-center text-uppercase font-weight-bold">Featured</p>
 </div>
 <div class="card-wrapper">
     <article class="card col-md-6 offset-md-3 flat-style">
@@ -15,11 +14,11 @@
                         <img src="{%static 'theme/img/oebl_person_red.svg' %}" />
                     </div>
                     <div class="col-lg-10 col-md-10 col-12">
-                        <h5 class="mb-1">{%if featured_pers.first_name %} {{ featured_pers.first_name}}
+                        <h5 class="mb-1 font-weight-bold">{%if featured_pers.first_name %} {{ featured_pers.first_name}}
                             {% endif %}{{ featured_pers.name}}</h5>
-                        <p class="profession m-0 p-0">{% for x in featured_pers.profession.all %} {{x.name }}
+                        <p class="profession m-0 p-0 font-weight-bold">{% for x in featured_pers.profession.all %} {{x.name }}
                             {% endfor %}</p>
-                        <p class="startend  mt-1 mb-0 p-0">{{featured_pers.start_date_written }} -
+                        <p class="startend  mt-1 mb-0 p-0 font-weight-bold">{{featured_pers.start_date_written }} -
                             {{featured_pers.end_date_written }}</p>
                     </div>
             </header>
