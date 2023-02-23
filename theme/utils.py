@@ -7,6 +7,7 @@ from apis_core.apis_entities.models import Person
 from apis_core.apis_labels.models import Label
 from apis_core.apis_metainfo.models import Collection
 from apis_core.apis_relations.models import PersonPlace
+from apis_highlighter.highlighter import highlight_text_new
 
 try:
     FEATURED_COLLECTION_NAME = settings.FEATURED_COLLECTION_NAME
@@ -96,7 +97,9 @@ def enrich_person_context(person_object, context):
         kind__name=getattr(settings, "HAUPTTEXT_TEXT_NAME", "ÖBL Haupttext")
     )
     if haupttext.count() == 1:
-        context["haupttext"] = haupttext[0].text
+        # context["haupttext"] = haupttext[0].text
+        text = highlight_text_new(haupttext[0])
+        context["haupttext"] = text[0]
     else:
         context["haupttext"] = "-"
     kurzinfo = person_object.text.filter(

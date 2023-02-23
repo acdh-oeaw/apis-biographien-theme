@@ -1,10 +1,11 @@
 [tool.poetry]
 name = "apis-biographien-theme"
-version = "0.0.1"
+version = "0.0.2"
 description = "Apis biographien"
 authors = ["Matthias Schlögl <m.schloegl@gmail.com>"]
 license = "MIT"
-packages = [{include = "theme"}]
+packages = [{include = "theme"},
+]
 
 
 [tool.poetry.dependencies]
@@ -13,3 +14,7 @@ django-haystack = "~3.2"
 libsass = "^0.22.0"
 django-compressor = "^4.3.1"
 django-sass-processor = "^1.2.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0a3"]
+build-backend = "poetry.core.masonry.api"

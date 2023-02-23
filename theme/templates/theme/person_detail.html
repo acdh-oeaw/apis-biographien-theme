@@ -62,7 +62,9 @@
           </div>
         </div>
         <div id="main-bio-text" class="card-body p-0 pt-3">
+          {% autoescape off %}
           <p class="p-0">{{ haupttext }}</p>
+          {% endautoescape %}
         </div>
         <div class="mt-5 text-light">
           <hr class="m-5" />
