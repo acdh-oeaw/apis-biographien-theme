@@ -99,7 +99,9 @@ def enrich_person_context(person_object, context):
     if haupttext.count() == 1:
         # context["haupttext"] = haupttext[0].text
         text = highlight_text_new(haupttext[0])
-        context["haupttext"] = text[0]
+        context["haupttext"] = (
+            text[0].replace("<mark ", "<a ").replace("</mark>", "</a>")
+        )
     else:
         context["haupttext"] = "-"
     kurzinfo = person_object.text.filter(
