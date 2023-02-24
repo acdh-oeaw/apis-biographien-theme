@@ -12,7 +12,7 @@ urlpatterns = [
     path(r"about/", views.AboutView.as_view(), name="about"),
     path(r"contact/", views.ContactView.as_view(), name="contact"),
     path(r"expert-search/", views.PersonListView.as_view(), name="expert-search"),
-    path(r"search/?", views.SearchView.as_view(), name="search"),
+    path(r"search/", views.SearchView.as_view(), name="search"),
     re_path(
         r"^person/(?P<pk>[0-9]+)$",
         views.PersonDetailView.as_view(),
